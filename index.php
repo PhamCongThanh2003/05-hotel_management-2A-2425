@@ -135,7 +135,7 @@ require_once 'config.php';
             <div class="row">
                 <div class="col-md-4">
                     <h5>Liên hệ</h5>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường Khách Sạn, TP.HCM, Việt Nam</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường Khách Sạn, TP Ha Noi, Việt Nam</p>
                     <p><i class="fas fa-phone"></i> (+84) 123 456 789</p>
                     <p><i class="fas fa-envelope"></i> info@hotel.com</p>
                 </div>
