@@ -1,0 +1,200 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    transition: transform 0.3s;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    color: #007bff !important;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #0056b3 !important;
+}
+
+.nav-link.btn {
+    background-color: #ffc107;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+.nav-link.btn:hover {
+    background-color: #ffca2c;
+    color: #212529 !important;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #007bff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #e9ecef;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.hero .btn {
+    background-color: #ffc107;
+    color: #212529;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #ffca2c;
+}
+
+.hero-image img {
+    max-width: 80%;
+    margin-top: 20px;
+}
+
+/* Dashboard Section */
+.dashboard {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.dashboard h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 40px;
+}
+
+.dashboard .btn {
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.dashboard .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Features Section */
+.features {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 40px;
+}
+
+.features a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.features i {
+    color: #007bff;
+}
+
+.features h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 15px;
+}
+
+.features p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.features a:hover h4 {
+    color: #0056b3;
+}
+
+
+/* Pricing Section */
+.pricing {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.pricing h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+.pricing .btn {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 30px;
+    transition: background-color 0.3s;
+}
+
+.pricing .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+.footer {
+    background-color: #1a252f;
+    color: #fff;
+}
+
+.footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: #adb5bd;
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #007bff;
+}
+
+.footer iframe {
+    border-radius: 5px;
+}
