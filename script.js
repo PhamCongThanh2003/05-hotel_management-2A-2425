@@ -79,3 +79,5 @@ function validateBookingForm() {
     }
     return true;
 }
+
+

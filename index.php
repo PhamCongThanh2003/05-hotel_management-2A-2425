@@ -17,7 +17,7 @@ require_once 'config.php';
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <img src="assets/2.jpg" alt="Hotel PMS Logo" style="height: 55px ;">
+                    <img src="assets/2.jpg" alt="Hotel PMS Logo" style="height: 55px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
@@ -42,19 +42,24 @@ require_once 'config.php';
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container text-center py-5">
-            <h1 class="display-4 text-white">Giải pháp toàn diện quản lý khách sạn</h1>
-            <p class="lead text-white mb-4">Hệ thống quản lý khách sạn giúp bạn tối ưu hóa hoạt động, quản lý phòng và đặt phòng trực tiếp trên website.</p>
+    <section class="hero position-relative overflow-hidden">
+        <!-- Slider ảnh nền -->
+        <div id="hero-slider" class="position-absolute top-0 start-0 w-100 h-100 z-0">
+            <img src="assets/slide1.jpg" class="slider-bg active">
+            <img src="assets/slide2.jpg" class="slider-bg">
+            <img src="assets/slide3.jpg" class="slider-bg">
+        </div>
+
+        <!-- Nội dung phía trên ảnh -->
+        <div class="hero-content text-white">
+            <h1 class="display-4">Giải pháp toàn diện quản lý khách sạn</h1>
+            <p class="lead mb-4">Hệ thống quản lý khách sạn giúp bạn tối ưu hóa hoạt động, quản lý phòng và đặt phòng trực tiếp trên website.</p>
             <a href="#dashboard" class="btn btn-warning btn-lg">Xem Demo</a>
-            <div class="hero-image mt-5">
-                <img src="assets/1.png" alt="Dashboard" class="img-fluid rounded shadow">
-            </div>
         </div>
     </section>
 
     <!-- Dashboard Section -->
-    <section id="dashboard" class="dashboard py-5">
+    <section id="dashboard" class="dashboard">
         <div class="container">
             <h2 class="text-center mb-5">Chào mừng đến với hệ thống</h2>
             <div class="row mt-4">
@@ -96,7 +101,7 @@ require_once 'config.php';
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features py-5">
+    <section id="features" class="features">
         <div class="container">
             <h2 class="text-center mb-5">Tính năng nổi bật</h2>
             <div class="row">
@@ -119,7 +124,7 @@ require_once 'config.php';
     </section>
 
     <!-- Pricing Section (Placeholder) -->
-    <section id="pricing" class="pricing py-5 bg-light">
+    <section id="pricing" class="pricing">
         <div class="container">
             <h2 class="text-center mb-5">Bảng giá</h2>
             <p class="text-center">Liên hệ với chúng tôi để nhận báo giá chi tiết.</p>
@@ -130,7 +135,7 @@ require_once 'config.php';
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="footer bg-dark text-white py-4">
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -158,5 +163,35 @@ require_once 'config.php';
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts.js"></script>
+    <script>
+        // Kiểm tra xem hero-content có hiển thị không
+        const heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+            console.log('Hero content được tìm thấy trong DOM:', heroContent);
+            console.log('Style của hero-content:', window.getComputedStyle(heroContent));
+        } else {
+            console.log('Không tìm thấy hero-content trong DOM.');
+        }
+
+        // Slider logic
+        let current = 0;
+        const slides = document.querySelectorAll("#hero-slider .slider-bg");
+
+        if (slides.length > 0) {
+            console.log("Tổng số slide:", slides.length);
+            setInterval(() => {
+                console.log("Slide hiện tại:", current);
+                slides[current].style.opacity = '0';
+                slides[current].classList.remove("active");
+                requestAnimationFrame(() => {
+                    current = (current + 1) % slides.length;
+                    slides[current].classList.add("active");
+                    slides[current].style.opacity = '1';
+                });
+            }, 2000);
+        } else {
+            console.log("Không tìm thấy slider images.");
+        }
+    </script>
 </body>
 </html>

@@ -48,44 +48,75 @@ body {
 
 /* Hero Section */
 .hero {
-    background-color: #007bff;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+    height: 100vh;
     position: relative;
     overflow: hidden;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    color: #e9ecef;
-    max-width: 600px;
-    margin: 0 auto 20px;
+.hero-content {
+    z-index: 3 !important;
+    text-align: center;
+    color: white !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative;
+    display: block !important;
+    pointer-events: auto;
 }
 
-.hero .btn {
-    background-color: #ffc107;
-    color: #212529;
-    border: none;
-    padding: 10px 30px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s;
+#hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
-.hero .btn:hover {
-    background-color: #ffca2c;
+.slider-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out !important;
+    z-index: 0;
+    will-change: opacity;
 }
 
-.hero-image img {
-    max-width: 80%;
-    margin-top: 20px;
+.slider-bg.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 60vh;
+        padding-top: 60px;
+    }
+    .hero-content {
+        padding: 20px;
+    }
 }
 
 /* Dashboard Section */
@@ -145,7 +176,6 @@ body {
 .features a:hover h4 {
     color: #0056b3;
 }
-
 
 /* Pricing Section */
 .pricing {
