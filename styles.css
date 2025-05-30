@@ -46,7 +46,7 @@ body {
     color: #212529 !important;
 }
 
-/* Hero Section */
+/* Hero Section (Giữ nguyên) */
 .hero {
     height: 100vh;
     position: relative;
@@ -56,6 +56,7 @@ body {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 .hero::before {
@@ -65,7 +66,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -78,6 +79,8 @@ body {
     position: relative;
     display: block !important;
     pointer-events: auto;
+    max-width: 800px;
+    padding: 20px;
 }
 
 #hero-slider {
@@ -97,7 +100,7 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease-in-out !important;
+    transition: opacity 0.5s ease-in-out !important;
     z-index: 0;
     will-change: opacity;
 }
@@ -105,6 +108,126 @@ body {
 .slider-bg.active {
     opacity: 1;
     z-index: 1;
+}
+
+/* Welcome Section (Thêm mới) */
+.welcome-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.welcome-section .welcome-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #007bff;
+}
+
+.welcome-section .lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.welcome-section .btn {
+    padding: 8px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.welcome-section .btn:hover {
+    background-color: #ffca2c;
+    transform: scale(1.05);
+}
+
+/* Elegant Accommodation Section (Carousel) */
+.elegant-accommodation {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.elegant-accommodation .display-4 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.elegant-accommodation .carousel-item .row {
+    justify-content: center;
+}
+
+.elegant-accommodation .img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 300px; /* Giới hạn chiều cao ảnh */
+    object-fit: cover;
+}
+
+.elegant-accommodation p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+    min-height: 60px; /* Đảm bảo chiều cao đồng đều */
+}
+
+.elegant-accommodation .btn-warning {
+    background-color: #f4a261;
+    border-color: #f4a261;
+    color: #fff;
+    padding: 8px 20px;
+    font-size: 1rem;
+}
+
+.elegant-accommodation .btn-warning:hover {
+    background-color: #e07a5f;
+    border-color: #e07a5f;
+}
+
+.elegant-accommodation .btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+    padding: 8px 20px;
+    font-size: 1rem;
+}
+
+.elegant-accommodation .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.elegant-accommodation .carousel-control-prev,
+.elegant-accommodation .carousel-control-next {
+    width: 5%;
+}
+
+.elegant-accommodation .carousel-control-prev-icon,
+.elegant-accommodation .carousel-control-next-icon {
+    background-color: #6c757d;
+    border-radius: 50%;
+    padding: 10px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 60vh;
+        padding-top: 60px;
+    }
+    .hero-content {
+        padding: 20px;
+    }
+    .welcome-section .welcome-text {
+        font-size: 2rem;
+    }
+    .welcome-section .lead {
+        font-size: 1rem;
+    }
 }
 
 /* Responsive */
@@ -177,28 +300,43 @@ body {
     color: #0056b3;
 }
 
-/* Pricing Section */
-.pricing {
-    text-align: center;
-    padding: 60px 0;
-}
-
-.pricing h2 {
+/* Pricing Section (Room Types & Rates) */
+.pricing .display-4 {
     font-size: 2.5rem;
-    color: #007bff;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-.pricing .btn {
-    background-color: #007bff;
-    border: none;
-    padding: 10px 30px;
-    transition: background-color 0.3s;
+.pricing .table {
+    background-color: #fff;
+    border: 2px solid #000;
+    font-size: 1rem;
 }
 
-.pricing .btn:hover {
-    background-color: #0056b3;
+.pricing .table th {
+    background-color: #f8f9fa;
+    border: 1px solid #000;
+    padding: 10px;
+    font-weight: 600;
+    color: #333;
 }
 
+.pricing .table td {
+    border: 1px solid #000;
+    padding: 10px;
+    color: #333;
+}
+
+.pricing .table-responsive {
+    overflow-x: auto;
+}
+
+.pricing p.text-muted {
+    font-size: 0.9rem;
+    color: #666;
+}
 /* Footer */
 .footer {
     background-color: #1a252f;

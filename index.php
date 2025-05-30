@@ -42,19 +42,88 @@ require_once 'config.php';
     </header>
 
     <!-- Hero Section -->
-    <section class="hero position-relative overflow-hidden">
-        <!-- Slider ảnh nền -->
-        <div id="hero-slider" class="position-absolute top-0 start-0 w-100 h-100 z-0">
-            <img src="assets/slide1.jpg" class="slider-bg active">
-            <img src="assets/slide2.jpg" class="slider-bg">
-            <img src="assets/slide3.jpg" class="slider-bg">
-        </div>
+<section class="hero position-relative overflow-hidden">
+    <!-- Slider ảnh nền -->
+    <div id="hero-slider" class="position-absolute top-0 start-0 w-100 h-100 z-0">
+        <img src="assets/slide1.jpg" class="slider-bg active" alt="Slide 1">
+        <img src="assets/slide2.jpg" class="slider-bg" alt="Slide 2">
+        <img src="assets/slide3.jpg" class="slider-bg" alt="Slide 3">
+    </div>
 
-        <!-- Nội dung phía trên ảnh -->
-        <div class="hero-content text-white">
-            <h1 class="display-4">Giải pháp toàn diện quản lý khách sạn</h1>
-            <p class="lead mb-4">Hệ thống quản lý khách sạn giúp bạn tối ưu hóa hoạt động, quản lý phòng và đặt phòng trực tiếp trên website.</p>
-            <a href="#dashboard" class="btn btn-warning btn-lg">Xem Demo</a>
+    <!-- Nội dung phía trên ảnh -->
+    <div class="hero-content text-white">
+        <h1 class="display-4">Giải pháp toàn diện quản lý khách sạn</h1>
+        <p class="lead mb-4">Hệ thống quản lý khách sạn giúp bạn tối ưu hóa hoạt động, quản lý phòng và đặt phòng trực tiếp trên website.</p>
+        <a href="#dashboard" class="btn btn-warning btn-lg">Xem Demo</a>
+    </div>
+</section>
+
+<!-- Welcome Section (Thêm mới) -->
+<section id="welcome-section" class="welcome-section py-5">
+    <div class="container">
+        <h1 class="welcome-text mb-3 text-center">Welcome to Sunrise Ha Noi Hotel</h1>
+        <p class="lead mb-4 text-center">Sunrise Hotel offers a full range of amenities, fast check-in procedures, free public Wi-Fi coverage throughout the resort. The highlight of Sunrise Hotel is the restaurant that offers both Western and Oriental cuisine built and served on the top floor. You can enjoy a delicious dinner while watching the starry sky and sea at night. In addition, we can enjoy other services such as spa, gym in the resort basis.<br><br>Sunrise Hotel is confident to bring you the emotional excitement, the best experience, the best in your stay. Come to us, we guarantee that you will not regret.</p>
+        <div class="text-center">
+            <a href="#contact" class="btn btn-warning btn-lg">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- Elegant Accommodation Section (Carousel) -->
+    <section class="elegant-accommodation py-5">
+        <div class="container text-center">
+            <h1 class="display-4 text-uppercase text-dark fw-bold">Elegant Accommodation</h1>
+            <div id="roomCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="images/deluxecity.jpg" alt="Room 1" class="img-fluid rounded">
+                                <p class="mt-2">Balcony Family Suite with a comfortable King-sized bed and spacious balcony.</p>
+                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="images/senior.jpg" alt="Room 2" class="img-fluid rounded">
+                                <p class="mt-2">Deluxe Room with modern amenities and stunning city views.</p>
+                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="images/triplesuite.jpg" alt="Room 3" class="img-fluid rounded">
+                                <p class="mt-2">Executive Suite with luxurious decor and private terrace.</p>
+                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="images/familysuite.jpg" alt="Room 4" class="img-fluid rounded">
+                                <p class="mt-2">Superior Room with a cozy atmosphere and city skyline view.</p>
+                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="images/connecting.jpg" alt="Room 5" class="img-fluid rounded">
+                                <p class="mt-2">Penthouse Suite with panoramic views and premium amenities.</p>
+                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="images/junior.jpg" alt="Room 6" class="img-fluid rounded">
+                                <p class="mt-2">Garden View Room with direct access to the garden area.</p>
+                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <a href="#" class="btn btn-outline-secondary mt-4">View all rooms</a>
         </div>
     </section>
 
@@ -123,14 +192,54 @@ require_once 'config.php';
         </div>
     </section>
 
-    <!-- Pricing Section (Placeholder) -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2 class="text-center mb-5">Bảng giá</h2>
-            <p class="text-center">Liên hệ với chúng tôi để nhận báo giá chi tiết.</p>
-            <div class="text-center mt-3">
-                <a href="#contact" class="btn btn-primary">Liên hệ ngay</a>
+    <!-- Pricing Section (Room Types & Rates) -->
+    <section id="pricing" class="pricing py-5">
+        <div class="container text-center">
+            <h2 class="display-4 text-uppercase text-dark fw-bold">Room Types & Rates</h2>
+            <div class="table-responsive mt-4">
+                <table class="table table-bordered text-center mx-auto" style="max-width: 600px;">
+                    <thead>
+                        <tr>
+                            <th>Room Types</th>
+                            <th>Public Rate (US$)</th>
+                            <th>Promotional Rate (US$) <br> (valid until Dec. 2023)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Deluxe City View</td>
+                            <td>60++</td>
+                            <td>50++</td>
+                        </tr>
+                        <tr>
+                            <td>Senior Deluxe City View</td>
+                            <td>80++</td>
+                            <td>70++</td>
+                        </tr>
+                        <tr>
+                            <td>Balcony Triple Suite</td>
+                            <td>90++</td>
+                            <td>80++</td>
+                        </tr>
+                        <tr>
+                            <td>Balcony Family Suite</td>
+                            <td>100++</td>
+                            <td>95++</td>
+                        </tr>
+                        <tr>
+                            <td>Connecting Room</td>
+                            <td>95++</td>
+                            <td>90++</td>
+                        </tr>
+                        <tr>
+                            <td>Junior Suite</td>
+                            <td>115++</td>
+                            <td>100++</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <p class="mt-3 text-muted">*Extra bed is available@US$20++ including buffet breakfast (all room categories)</p>
         </div>
     </section>
 
