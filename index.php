@@ -1,4 +1,4 @@
-<?php
+<<?php
 require_once 'config.php';
 ?>
 <!DOCTYPE html>
@@ -42,34 +42,34 @@ require_once 'config.php';
     </header>
 
     <!-- Hero Section -->
-<section class="hero position-relative overflow-hidden">
-    <!-- Slider ảnh nền -->
-    <div id="hero-slider" class="position-absolute top-0 start-0 w-100 h-100 z-0">
-        <img src="assets/slide1.jpg" class="slider-bg active" alt="Slide 1">
-        <img src="assets/slide2.jpg" class="slider-bg" alt="Slide 2">
-        <img src="assets/slide3.jpg" class="slider-bg" alt="Slide 3">
-    </div>
-
-    <!-- Nội dung phía trên ảnh -->
-    <div class="hero-content text-white">
-        <h1 class="display-4">Giải pháp toàn diện quản lý khách sạn</h1>
-        <p class="lead mb-4">Hệ thống quản lý khách sạn giúp bạn tối ưu hóa hoạt động, quản lý phòng và đặt phòng trực tiếp trên website.</p>
-        <a href="#dashboard" class="btn btn-warning btn-lg">Xem Demo</a>
-    </div>
-</section>
-
-<!-- Welcome Section (Thêm mới) -->
-<section id="welcome-section" class="welcome-section py-5">
-    <div class="container">
-        <h1 class="welcome-text mb-3 text-center">Welcome to Sunrise Ha Noi Hotel</h1>
-        <p class="lead mb-4 text-center">Sunrise Hotel offers a full range of amenities, fast check-in procedures, free public Wi-Fi coverage throughout the resort. The highlight of Sunrise Hotel is the restaurant that offers both Western and Oriental cuisine built and served on the top floor. You can enjoy a delicious dinner while watching the starry sky and sea at night. In addition, we can enjoy other services such as spa, gym in the resort basis.<br><br>Sunrise Hotel is confident to bring you the emotional excitement, the best experience, the best in your stay. Come to us, we guarantee that you will not regret.</p>
-        <div class="text-center">
-            <a href="#contact" class="btn btn-warning btn-lg">Contact Us</a>
+    <section class="hero position-relative overflow-hidden">
+        <!-- Slider ảnh nền -->
+        <div id="hero-slider" class="position-absolute top-0 start-0 w-100 h-100 z-0">
+            <img src="assets/slide1.jpg" class="slider-bg active" alt="Slide 1">
+            <img src="assets/slide2.jpg" class="slider-bg" alt="Slide 2">
+            <img src="assets/slide3.jpg" class="slider-bg" alt="Slide 3">
         </div>
-    </div>
-</section>
 
-<!-- Elegant Accommodation Section (Carousel) -->
+        <!-- Nội dung phía trên ảnh -->
+        <div class="hero-content text-white">
+            <h1 class="display-4">Giải pháp toàn diện quản lý khách sạn</h1>
+            <p class="lead mb-4">Hệ thống quản lý khách sạn giúp bạn tối ưu hóa hoạt động, quản lý phòng và đặt phòng trực tiếp trên website.</p>
+            <a href="#dashboard" class="btn btn-warning btn-lg">Xem Demo</a>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="welcome-section" class="welcome-section py-5">
+        <div class="container">
+            <h1 class="welcome-text mb-3 text-center">Welcome to Sunrise Ha Noi Hotel</h1>
+            <p class="lead mb-4 text-center">Sunrise Hotel offers a full range of amenities, fast check-in procedures, free public Wi-Fi coverage throughout the resort. The highlight of Sunrise Hotel is the restaurant that offers both Western and Oriental cuisine built and served on the top floor. You can enjoy a delicious dinner while watching the starry sky and sea at night. In addition, we can enjoy other services such as spa, gym in the resort basis.<br><br>Sunrise Hotel is confident to bring you the emotional excitement, the best experience, the best in your stay. Come to us, we guarantee that you will not regret.</p>
+            <div class="text-center">
+                <a href="#contact" class="btn btn-warning btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elegant Accommodation Section (Carousel) -->
     <section class="elegant-accommodation py-5">
         <div class="container text-center">
             <h1 class="display-4 text-uppercase text-dark fw-bold">Elegant Accommodation</h1>
@@ -80,17 +80,17 @@ require_once 'config.php';
                             <div class="col-md-4">
                                 <img src="images/deluxecity.jpg" alt="Room 1" class="img-fluid rounded">
                                 <p class="mt-2">Balcony Family Suite with a comfortable King-sized bed and spacious balcony.</p>
-                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=1" class="btn btn-warning mt-2">View Detail</a>
                             </div>
                             <div class="col-md-4">
                                 <img src="images/senior.jpg" alt="Room 2" class="img-fluid rounded">
                                 <p class="mt-2">Deluxe Room with modern amenities and stunning city views.</p>
-                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=2" class="btn btn-warning mt-2">View Detail</a>
                             </div>
                             <div class="col-md-4">
                                 <img src="images/triplesuite.jpg" alt="Room 3" class="img-fluid rounded">
                                 <p class="mt-2">Executive Suite with luxurious decor and private terrace.</p>
-                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=3" class="btn btn-warning mt-2">View Detail</a>
                             </div>
                         </div>
                     </div>
@@ -99,17 +99,17 @@ require_once 'config.php';
                             <div class="col-md-4">
                                 <img src="images/familysuite.jpg" alt="Room 4" class="img-fluid rounded">
                                 <p class="mt-2">Superior Room with a cozy atmosphere and city skyline view.</p>
-                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=4" class="btn btn-warning mt-2">View Detail</a>
                             </div>
                             <div class="col-md-4">
                                 <img src="images/connecting.jpg" alt="Room 5" class="img-fluid rounded">
                                 <p class="mt-2">Penthouse Suite with panoramic views and premium amenities.</p>
-                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=5" class="btn btn-warning mt-2">View Detail</a>
                             </div>
                             <div class="col-md-4">
                                 <img src="images/junior.jpg" alt="Room 6" class="img-fluid rounded">
                                 <p class="mt-2">Garden View Room with direct access to the garden area.</p>
-                                <a href="#" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=6" class="btn btn-warning mt-2">View Detail</a>
                             </div>
                         </div>
                     </div>
@@ -128,9 +128,9 @@ require_once 'config.php';
     </section>
 
     <!-- Dashboard Section -->
+    <?php if (isset($_SESSION['role']) && in_array($_SESSION['role'], ['staff', 'manager', 'admin'])): ?>
     <section id="dashboard" class="dashboard">
         <div class="container">
-            <h2 class="text-center mb-5">Chào mừng đến với hệ thống</h2>
             <div class="row mt-4">
                 <?php if (!isset($_SESSION['user_id'])): ?>
                     <div class="col-md-4">
@@ -168,8 +168,10 @@ require_once 'config.php';
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
     <!-- Features Section -->
+    <?php if (isset($_SESSION['role']) && in_array($_SESSION['role'], ['staff', 'manager', 'admin'])): ?>
     <section id="features" class="features">
         <div class="container">
             <h2 class="text-center mb-5">Tính năng nổi bật</h2>
@@ -191,6 +193,7 @@ require_once 'config.php';
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
     <!-- Pricing Section (Room Types & Rates) -->
     <section id="pricing" class="pricing py-5">
@@ -256,7 +259,7 @@ require_once 'config.php';
                 <div class="col-md-4">
                     <h5>Theo dõi chúng tôi</h5>
                     <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white me-2"></a>
                     <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
                 </div>
                 <div class="col-md-4">
