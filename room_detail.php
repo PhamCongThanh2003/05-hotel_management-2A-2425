@@ -2,17 +2,8 @@
 require_once 'config.php';
 require_once 'controller.php';
 
-// Kiểm tra đăng nhập
-if (!isset($_SESSION['user_id']) || !isset($_SESSION['role'])) {
-    header("Location: login.php");
-    exit;
-}
-
-checkRole(['customer']);
-
-if ($conn->connect_error) {
-    die("Kết nối thất bại: " . $conn->connect_error);
-}
+// Không yêu cầu đăng nhập để xem chi tiết phòng
+// Chỉ yêu cầu đăng nhập khi đặt phòng (sẽ kiểm tra trong phần form đặt phòng)
 
 // Cập nhật trạng thái phòng nếu đặt phòng hết hạn
 $sql_expired = "UPDATE rooms r
@@ -42,43 +33,48 @@ $amenities = !empty($room['amenities']) ? explode(',', $room['amenities']) : [];
 // Xử lý đặt phòng
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['book_room']) && $is_available) {
-    $check_in = $_POST['check_in_date'];
-    $check_out = $_POST['check_out_date'];
-    $user_id = $_SESSION['user_id'];
-
-    $check_in_date = new DateTime($check_in);
-    $check_out_date = new DateTime($check_out);
-    if ($check_out_date <= $check_in_date) {
-        $message = '<div class="alert alert-warning">Ngày trả phòng phải sau ngày nhận phòng!</div>';
+    // Kiểm tra đăng nhập trước khi đặt phòng
+    if (!isset($_SESSION['user_id'])) {
+        $message = '<div class="alert alert-warning">Vui lòng đăng nhập để đặt phòng!</div>';
     } else {
-        $sql_check = "SELECT * FROM bookings WHERE room_id = ? AND status != 'cancelled' 
-                      AND ((check_in <= ? AND check_out >= ?) OR (check_in <= ? AND check_out >= ?))";
-        $stmt_check = $conn->prepare($sql_check);
-        $stmt_check->bind_param("issss", $room_id, $check_in, $check_in, $check_out, $check_out);
-        $stmt_check->execute();
-        $result_check = $stmt_check->get_result();
+        $check_in = $_POST['check_in_date'];
+        $check_out = $_POST['check_out_date'];
+        $user_id = $_SESSION['user_id'];
 
-        if ($result_check->num_rows == 0) {
-            $sql_book = "INSERT INTO bookings (user_id, room_id, check_in, check_out, status) VALUES (?, ?, ?, ?, 'pending')";
-            $stmt_book = $conn->prepare($sql_book);
-            $stmt_book->bind_param("iiss", $user_id, $room_id, $check_in, $check_out);
-            if ($stmt_book->execute()) {
-                $sql_update_room = "UPDATE rooms SET status = 'occupied' WHERE id = ? AND status = 'available'";
-                $stmt_update = $conn->prepare($sql_update_room);
-                $stmt_update->bind_param("i", $room_id);
-                $stmt_update->execute();
-                $stmt_update->close();
-                $message = '<div class="alert alert-success">Đặt phòng thành công! Đang chờ xác nhận.</div>';
-                header("Location: booking.php");
-                exit;
-            } else {
-                $message = '<div class="alert alert-danger">Đặt phòng thất bại. Vui lòng thử lại.</div>';
-            }
-            $stmt_book->close();
+        $check_in_date = new DateTime($check_in);
+        $check_out_date = new DateTime($check_out);
+        if ($check_out_date <= $check_in_date) {
+            $message = '<div class="alert alert-warning">Ngày trả phòng phải sau ngày nhận phòng!</div>';
         } else {
-            $message = '<div class="alert alert-warning">Phòng không còn trống trong khoảng thời gian này.</div>';
+            $sql_check = "SELECT * FROM bookings WHERE room_id = ? AND status != 'cancelled' 
+                          AND ((check_in <= ? AND check_out >= ?) OR (check_in <= ? AND check_out >= ?))";
+            $stmt_check = $conn->prepare($sql_check);
+            $stmt_check->bind_param("issss", $room_id, $check_in, $check_in, $check_out, $check_out);
+            $stmt_check->execute();
+            $result_check = $stmt_check->get_result();
+
+            if ($result_check->num_rows == 0) {
+                $sql_book = "INSERT INTO bookings (user_id, room_id, check_in, check_out, status) VALUES (?, ?, ?, ?, 'pending')";
+                $stmt_book = $conn->prepare($sql_book);
+                $stmt_book->bind_param("iiss", $user_id, $room_id, $check_in, $check_out);
+                if ($stmt_book->execute()) {
+                    $sql_update_room = "UPDATE rooms SET status = 'occupied' WHERE id = ? AND status = 'available'";
+                    $stmt_update = $conn->prepare($sql_update_room);
+                    $stmt_update->bind_param("i", $room_id);
+                    $stmt_update->execute();
+                    $stmt_update->close();
+                    $message = '<div class="alert alert-success">Đặt phòng thành công! Đang chờ xác nhận.</div>';
+                    header("Location: booking.php");
+                    exit;
+                } else {
+                    $message = '<div class="alert alert-danger">Đặt phòng thất bại. Vui lòng thử lại.</div>';
+                }
+                $stmt_book->close();
+            } else {
+                $message = '<div class="alert alert-warning">Phòng không còn trống trong khoảng thời gian này.</div>';
+            }
+            $stmt_check->close();
         }
-        $stmt_check->close();
     }
 }
 ?>
@@ -147,29 +143,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['book_room']) && $is_av
             <div class="card-body">
                 <h5 class="card-title">Đặt phòng</h5>
                 <?php if ($is_available): ?>
-                    <form method="POST">
-                        <div class="row g-3">
-                            <div class="col-md-4">
-                                <label for="check_in_date" class="form-label">Ngày nhận</label>
-                                <input type="date" class="form-control" id="check_in_date" name="check_in_date" required min="<?php echo date('Y-m-d'); ?>">
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <form method="POST">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="check_in_date" class="form-label">Ngày nhận</label>
+                                    <input type="date" class="form-control" id="check_in_date" name="check_in_date" required min="<?php echo date('Y-m-d'); ?>">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="check_out_date" class="form-label">Ngày trả</label>
+                                    <input type="date" class="form-control" id="check_out_date" name="check_out_date" required min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>">
+                                </div>
                             </div>
-                        <div class="col-md-4">
-                            <label for="check_out_date" class="form-label">Ngày trả</label>
-                            <input type="date" class="form-control" id="check_out_date" name="check_out_date" required min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>">
+                            <div class="col-12 mt-3">
+                                <button type="submit" name="book_room" class="btn btn-primary">Đặt phòng</button>
                             </div>
-                        </div>
-                        <div class="col-12 mt-3">
-                            <button type="submit" name="book_room" class="btn btn-primary">Đặt phòng</button>
-                        </div>
-                    </div>
-                </form>
+                        </form>
+                    <?php else: ?>
+                        <div class="alert alert-info">Vui lòng <a href="login.php">đăng nhập</a> để đặt phòng.</div>
+                    <?php endif; ?>
                 <?php else: ?>
                     <div class="alert alert-warning">Phòng hiện không khả dụng do đã được đặt hoặc đang bảo trì.</div>
                 <?php endif; ?>
             </div>
         </div>
 
-        <a href="booking.php" class="btn btn-secondary mt-3">Quay lại</a>
+        <a href="index.php" class="btn btn-secondary mt-3">Quay lại</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

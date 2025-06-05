@@ -165,7 +165,7 @@ body {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-height: 300px; /* Giới hạn chiều cao ảnh */
+    max-height: 300px;
     object-fit: cover;
 }
 
@@ -173,15 +173,32 @@ body {
     font-size: 1rem;
     color: #666;
     margin-top: 10px;
-    min-height: 60px; /* Đảm bảo chiều cao đồng đều */
+    min-height: 60px;
+}
+
+/* Elegant Accommodation Section - Button Container */
+.elegant-accommodation .btn-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Đồng bộ kích thước nút */
+.elegant-accommodation .btn-warning,
+.elegant-accommodation .btn-primary {
+    padding: 8px 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    min-width: 120px;
+    text-align: center;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .elegant-accommodation .btn-warning {
     background-color: #f4a261;
     border-color: #f4a261;
     color: #fff;
-    padding: 8px 20px;
-    font-size: 1rem;
 }
 
 .elegant-accommodation .btn-warning:hover {
@@ -189,16 +206,15 @@ body {
     border-color: #e07a5f;
 }
 
-.elegant-accommodation .btn-outline-secondary {
-    border-color: #6c757d;
-    color: #6c757d;
-    padding: 8px 20px;
-    font-size: 1rem;
+.elegant-accommodation .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
 }
 
-.elegant-accommodation .btn-outline-secondary:hover {
-    background-color: #6c757d;
-    color: #fff;
+.elegant-accommodation .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
 
 .elegant-accommodation .carousel-control-prev,
@@ -212,8 +228,21 @@ body {
     border-radius: 50%;
     padding: 10px;
 }
+
 /* Responsive */
 @media (max-width: 768px) {
+    .elegant-accommodation .btn-container,
+    .all-rooms .btn-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .elegant-accommodation .btn-warning,
+    .elegant-accommodation .btn-primary,
+    .all-rooms .btn-warning,
+    .all-rooms .btn-primary {
+        width: 100%;
+        min-width: 0;
+    }
     .hero {
         height: auto;
         min-height: 60vh;
@@ -229,19 +258,6 @@ body {
         font-size: 1rem;
     }
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero {
-        height: auto;
-        min-height: 60vh;
-        padding-top: 60px;
-    }
-    .hero-content {
-        padding: 20px;
-    }
-}
-
 /* Dashboard Section */
 .dashboard {
     background-color: #fff;

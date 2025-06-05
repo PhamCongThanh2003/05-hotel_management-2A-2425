@@ -1,4 +1,4 @@
-<<?php
+<?php
 require_once 'config.php';
 ?>
 <!DOCTYPE html>
@@ -52,81 +52,101 @@ require_once 'config.php';
 
         <!-- Nội dung phía trên ảnh -->
         <div class="hero-content text-white">
-            <h1 class="display-4">Giải pháp toàn diện quản lý khách sạn</h1>
-            <p class="lead mb-4">Hệ thống quản lý khách sạn giúp bạn tối ưu hóa hoạt động, quản lý phòng và đặt phòng trực tiếp trên website.</p>
-            <a href="#dashboard" class="btn btn-warning btn-lg">Xem Demo</a>
+            <h1 class="display-4">Phòng</h1>
+            <p class="lead mb-4">Với phòng nghỉ thoải mái , cùng với đội ngũ nhân viên tận tâm , chu đáo , Hà Nội Hotel chắc chắn sẽ mang đến cho du khách những giây phút nghỉ ngơi tuyệt vời nhất.</p>
+            <a href="all_rooms.php" class="btn btn-warning btn-lg">Tìm thêm ở đây</a>
         </div>
     </section>
 
     <!-- Welcome Section -->
     <section id="welcome-section" class="welcome-section py-5">
         <div class="container">
-            <h1 class="welcome-text mb-3 text-center">Welcome to Sunrise Ha Noi Hotel</h1>
-            <p class="lead mb-4 text-center">Sunrise Hotel offers a full range of amenities, fast check-in procedures, free public Wi-Fi coverage throughout the resort. The highlight of Sunrise Hotel is the restaurant that offers both Western and Oriental cuisine built and served on the top floor. You can enjoy a delicious dinner while watching the starry sky and sea at night. In addition, we can enjoy other services such as spa, gym in the resort basis.<br><br>Sunrise Hotel is confident to bring you the emotional excitement, the best experience, the best in your stay. Come to us, we guarantee that you will not regret.</p>
+            <h1 class="welcome-text mb-3 text-center">Welcome to Ha Noi Hotel</h1>
+            <p class="lead mb-4 text-center">Khách sạn Hà Nội cung cấp đầy đủ các tiện nghi, quy trình nhận phòng nhanh chóng, và dịch vụ Wi-Fi công cộng miễn phí trên toàn khu nghỉ dưỡng. Điểm nổi bật của Khách sạn Sunrise là nhà hàng phục vụ cả ẩm thực phương Tây và phương Đông được xây dựng và phục vụ ở tầng trên cùng. Bạn có thể thưởng thức bữa tối ngon miệng trong khi ngắm nhìn bầu trời đầy sao và biển vào ban đêm. Ngoài ra, chúng tôi còn có thể tận hưởng các dịch vụ khác như spa, phòng gym trong khu nghỉ dưỡng.
+                Khách sạn Hà Nội tự tin mang đến cho bạn những cảm xúc tuyệt vời, trải nghiệm tốt nhất trong kỳ nghỉ của bạn. Hãy đến với chúng tôi, chúng tôi đảm bảo bạn sẽ không hối tiếc.</p>
             <div class="text-center">
                 <a href="#contact" class="btn btn-warning btn-lg">Contact Us</a>
             </div>
         </div>
     </section>
-
-    <!-- Elegant Accommodation Section (Carousel) -->
-    <section class="elegant-accommodation py-5">
-        <div class="container text-center">
-            <h1 class="display-4 text-uppercase text-dark fw-bold">Elegant Accommodation</h1>
-            <div id="roomCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="images/deluxecity.jpg" alt="Room 1" class="img-fluid rounded">
-                                <p class="mt-2">Balcony Family Suite with a comfortable King-sized bed and spacious balcony.</p>
+     <!-- Elegant Accommodation Section -->
+<section class="elegant-accommodation py-5">
+    <div class="container text-center">
+        <h1 class="display-4 text-uppercase text-dark fw-bold">Elegant Accommodation</h1>
+        <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="images/deluxecity.jpg" alt="Room 1" class="img-fluid rounded">
+                            <p class="mt-2">Balcony Family Suite with a comfortable King-sized bed and spacious balcony.</p>
+                            <div class="btn-container">
                                 <a href="room_detail.php?room_id=1" class="btn btn-warning mt-2">View Detail</a>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="images/senior.jpg" alt="Room 2" class="img-fluid rounded">
-                                <p class="mt-2">Deluxe Room with modern amenities and stunning city views.</p>
-                                <a href="room_detail.php?room_id=2" class="btn btn-warning mt-2">View Detail</a>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="images/triplesuite.jpg" alt="Room 3" class="img-fluid rounded">
-                                <p class="mt-2">Executive Suite with luxurious decor and private terrace.</p>
-                                <a href="room_detail.php?room_id=3" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=1" class="btn btn-primary mt-2">Book a Room</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="images/familysuite.jpg" alt="Room 4" class="img-fluid rounded">
-                                <p class="mt-2">Superior Room with a cozy atmosphere and city skyline view.</p>
-                                <a href="room_detail.php?room_id=4" class="btn btn-warning mt-2">View Detail</a>
+                        <div class="col-md-4">
+                            <img src="images/senior.jpg" alt="Room 2" class="img-fluid rounded">
+                            <p class="mt-2">Deluxe Room with modern amenities and stunning city views.</p>
+                            <div class="btn-container">
+                                <a href="room_detail.php?room_id=2" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=2" class="btn btn-primary mt-2">Book a Room</a>
                             </div>
-                            <div class="col-md-4">
-                                <img src="images/connecting.jpg" alt="Room 5" class="img-fluid rounded">
-                                <p class="mt-2">Penthouse Suite with panoramic views and premium amenities.</p>
-                                <a href="room_detail.php?room_id=5" class="btn btn-warning mt-2">View Detail</a>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="images/junior.jpg" alt="Room 6" class="img-fluid rounded">
-                                <p class="mt-2">Garden View Room with direct access to the garden area.</p>
-                                <a href="room_detail.php?room_id=6" class="btn btn-warning mt-2">View Detail</a>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="images/triplesuite.jpg" alt="Room 3" class="img-fluid rounded">
+                            <p class="mt-2">Executive Suite with luxurious decor and private terrace.</p>
+                            <div class="btn-container">
+                                <a href="room_detail.php?room_id=3" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=3" class="btn btn-primary mt-2">Book a Room</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="images/familysuite.jpg" alt="Room 4" class="img-fluid rounded">
+                            <p class="mt-2">Superior Room with a cozy atmosphere and city skyline view.</p>
+                            <div class="btn-container">
+                                <a href="room_detail.php?room_id=4" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=4" class="btn btn-primary mt-2">Book a Room</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="images/connecting.jpg" alt="Room 5" class="img-fluid rounded">
+                            <p class="mt-2">Penthouse Suite with panoramic views and premium amenities.</p>
+                            <div class="btn-container">
+                                <a href="room_detail.php?room_id=5" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=5" class="btn btn-primary mt-2">Book a Room</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="images/junior.jpg" alt="Room 6" class="img-fluid rounded">
+                            <p class="mt-2">Garden View Room with direct access to the garden area.</p>
+                            <div class="btn-container">
+                                <a href="room_detail.php?room_id=6" class="btn btn-warning mt-2">View Detail</a>
+                                <a href="room_detail.php?room_id=6" class="btn btn-primary mt-2">Book a Room</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a href="#" class="btn btn-outline-secondary mt-4">View all rooms</a>
+            <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </section>
-
+        <a href="all_rooms.php" class="btn btn-outline-secondary mt-4">View All Rooms</a>
+    </div>
+</section>
+    
     <!-- Dashboard Section -->
     <?php if (isset($_SESSION['role']) && in_array($_SESSION['role'], ['staff', 'manager', 'admin'])): ?>
     <section id="dashboard" class="dashboard">
