@@ -94,7 +94,7 @@ require_once 'config.php';
             <div class="row mt-4">
                 <div class="col-md-4 mb-4">
                     <img src="images/deluxecity.jpg" alt="Room 1" class="img-fluid rounded">
-                    <p class="mt-2">Balcony Family Suite with a comfortable King-sized bed and spacious balcony.</p>
+                    <p class="mt-2">Suite Gia Đình Có Ban Công với giường King-size thoải mái và ban công rộng rãi.</p>
                     <div class="btn-container">
                         <a href="room_detail.php?room_id=1" class="btn btn-warning mt-2">View Detail</a>
                         <a href="room_detail.php?room_id=1" class="btn btn-primary mt-2">Book a Room</a>
@@ -102,7 +102,7 @@ require_once 'config.php';
                 </div>
                 <div class="col-md-4 mb-4">
                     <img src="images/senior.jpg" alt="Room 2" class="img-fluid rounded">
-                    <p class="mt-2">Deluxe Room with modern amenities and stunning city views.</p>
+                    <p class="mt-2">Phòng Deluxe với tiện nghi hiện đại và tầm nhìn thành phố tuyệt đẹp.</p>
                     <div class="btn-container">
                         <a href="room_detail.php?room_id=2" class="btn btn-warning mt-2">View Detail</a>
                         <a href="room_detail.php?room_id=2" class="btn btn-primary mt-2">Book a Room</a>
@@ -110,7 +110,7 @@ require_once 'config.php';
                 </div>
                 <div class="col-md-4 mb-4">
                     <img src="images/triplesuite.jpg" alt="Room 3" class="img-fluid rounded">
-                    <p class="mt-2">Executive Suite with luxurious decor and private terrace.</p>
+                    <p class="mt-2">Suite điều hành với trang trí sang trọng và sân thượng riêng.</p>
                     <div class="btn-container">
                         <a href="room_detail.php?room_id=3" class="btn btn-warning mt-2">View Detail</a>
                         <a href="room_detail.php?room_id=3" class="btn btn-primary mt-2">Book a Room</a>
@@ -118,7 +118,7 @@ require_once 'config.php';
                 </div>
                 <div class="col-md-4 mb-4">
                     <img src="images/familysuite.jpg" alt="Room 4" class="img-fluid rounded">
-                    <p class="mt-2">Superior Room with a cozy atmosphere and city skyline view.</p>
+                    <p class="mt-2">Phòng Superior với không gian ấm cúng và tầm nhìn ra đường chân trời thành phố.</p>
                     <div class="btn-container">
                         <a href="room_detail.php?room_id=4" class="btn btn-warning mt-2">View Detail</a>
                         <a href="room_detail.php?room_id=4" class="btn btn-primary mt-2">Book a Room</a>
@@ -126,7 +126,7 @@ require_once 'config.php';
                 </div>
                 <div class="col-md-4 mb-4">
                     <img src="images/connecting.jpg" alt="Room 5" class="img-fluid rounded">
-                    <p class="mt-2">Penthouse Suite with panoramic views and premium amenities.</p>
+                    <p class="mt-2">Penthouse Suite với tầm nhìn toàn cảnh và tiện nghi cao cấp.</p>
                     <div class="btn-container">
                         <a href="room_detail.php?room_id=5" class="btn btn-warning mt-2">View Detail</a>
                         <a href="room_detail.php?room_id=5" class="btn btn-primary mt-2">Book a Room</a>
@@ -134,7 +134,7 @@ require_once 'config.php';
                 </div>
                 <div class="col-md-4 mb-4">
                     <img src="images/junior.jpg" alt="Room 6" class="img-fluid rounded">
-                    <p class="mt-2">Garden View Room with direct access to the garden area.</p>
+                    <p class="mt-2">Phòng nhìn ra vườn với lối đi trực tiếp ra khu vực vườn.</p>
                     <div class="btn-container">
                         <a href="room_detail.php?room_id=6" class="btn btn-warning mt-2">View Detail</a>
                         <a href="room_detail.php?room_id=6" class="btn btn-primary mt-2">Book a Room</a>

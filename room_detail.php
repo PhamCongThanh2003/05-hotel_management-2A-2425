@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['book_room']) && $is_av
 </head>
 <body>
     <div class="container mt-4">
-        <h2 class="text-center mb-4">Chi tiết phòng - <?php echo htmlspecialchars($room['room_type']); ?></h2>
+        <h2 class="text-center mb-4"><?php echo htmlspecialchars($room['room_type']); ?></h2>
 
         <?php echo isset($message) ? $message : ''; ?>
 
