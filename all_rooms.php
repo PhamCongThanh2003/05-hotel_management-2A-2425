@@ -72,8 +72,7 @@ require_once 'config.php';
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="index.php">Trang chủ</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.php#features">Sản phẩm</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php#pricing">Bảng giá</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php#blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php#pricing">Bảng giá</a></li>             
                         <li class="nav-item"><a class="nav-link" href="index.php#contact">Liên hệ</a></li>
                         <?php if (isset($_SESSION['user_id'])): ?>
                             <li class="nav-item"><a class="nav-link" href="logout.php">Đăng xuất</a></li>

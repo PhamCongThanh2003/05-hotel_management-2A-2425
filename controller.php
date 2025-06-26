@@ -7,7 +7,7 @@ function checkRole($allowed_roles) {
         header("Location: login.php");
         exit;
     }
-    echo '<pre>Debug: Current role: ' . $_SESSION['role'] . '</pre>';
+   // echo '<pre>Debug: Current role: ' . $_SESSION['role'] . '</pre>';
     if (!in_array($_SESSION['role'], $allowed_roles)) {
         die("Bạn không có quyền truy cập trang này!");
     }
