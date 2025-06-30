@@ -28,6 +28,9 @@ require_once 'config.php';
                         <li class="nav-item"><a class="nav-link" href="#features">Sản phẩm</a></li>
                         <li class="nav-item"><a class="nav-link" href="#pricing">Bảng giá</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Liên hệ</a></li>
+                        <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] == 'customer'): ?>
+                            <li class="nav-item"><a class="nav-link" href="booking.php">Quản lý đặt phòng</a></li>
+                        <?php endif; ?>
                         <?php if (isset($_SESSION['user_id'])): ?>
                             <li class="nav-item"><a class="nav-link" href="logout.php">Đăng xuất</a></li>
                             <li class="nav-item"><span class="nav-link">Xin chào, <?php echo htmlspecialchars($_SESSION['full_name']); ?>!</span></li>
